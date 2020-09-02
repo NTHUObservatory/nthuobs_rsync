@@ -20,7 +20,8 @@ https://docs.microsoft.com/zh-tw/windows-server/administration/openssh/openssh_i
     State : NotPresent
     ```
 1. Install the server and/or client features
-    ```# Install the OpenSSH Client
+    ```
+    # Install the OpenSSH Client
     Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
     # Install the OpenSSH Server
