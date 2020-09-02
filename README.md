@@ -3,6 +3,7 @@ This file explains how to synchronize observation data on the workstation (Win 1
 
 ## Install OpenSSH server and client on Windows 10 1809
 We use Windows PowerShell as our shell so we can run Linux commands.
+https://docs.microsoft.com/zh-tw/windows-server/administration/openssh/openssh_install_firstuse?fbclid=IwAR0_ZwxjI6t78VDyZwpPV48Pk4octLrRpXkQHSluV94br-CT9YjtJ9afGLM
 
 ### Install OpenSSH
 1. Find `Windows PowerShell` in Windows App, run as administrator.
@@ -48,3 +49,13 @@ PowerShell inherits Window users, setup users and password there.
 1. Right click on `This PC` -> `Manage`.
 1. `Local Users and Groups` -> `Users`.
 1. Right click on the user you want to set, here `observatory` -> `Set Password` -> enter your new password.
+
+## Set Default Shell
+Set PowerShell as default shell rather than Command Prompt (cmd.exe) because rsync use Linux commands.
+https://docs.microsoft.com/zh-tw/windows-server/administration/openssh/openssh_server_configuration
+
+```
+New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -PropertyType String -Force
+```
+
+## Create a PowerShell host for SSH remoting
