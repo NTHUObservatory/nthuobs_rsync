@@ -38,7 +38,10 @@ https://docs.microsoft.com/zh-tw/windows-server/administration/openssh/openssh_i
 1. Start up sshd service when reboot: `Set-Service -Name sshd -StartupType 'Automatic'`
 1. Set firewall rule
     ```
+    # Check if firewall exists and is enabled.
     Get-NetFirewallRule -Name *ssh*
+    
+    # If not, create one.
     New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
     ```
 One could connect to workstation by ssh now.
