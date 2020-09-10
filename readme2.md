@@ -11,8 +11,10 @@ Download Cygwin (https://cygwin.com/index.html, setup-x86_64.exe) to workstation
 1. Local Package Directory `C:\cygwin64`.
 1. Select Your Internet Connections `Use System Proxy Settings`.
 1. Choose A Download Site `http://ftp.ntu.edu.tw`.
-1. Choose plugins `Net > openssh, Devel > git, Editors > vim, Admin > cygrunsrv` in their newest version.
+1. There will be some default plugins, choose additional plugins `Net > openssh, Devel > git, Editors > vim, Admin > cygrunsrv , Net > rsync` in their newest version.
 1. Install & Finish.
+
+** If you want to install other functions/packages in the future, run `setup-x86_64.exe` again and choose the ones you need.
 
 ## Setup environment variables on Windows
 ### Set user password
@@ -32,8 +34,16 @@ Download Cygwin (https://cygwin.com/index.html, setup-x86_64.exe) to workstation
 1. It will ask `Should StrictModes be used? (yes/no)` -> `yes`.
 1. Activate ssh `net start sshd`.
 1. Syncronize users and password of Cygwin and Windows.
-    1. `mkpasswd-cl > /etc/passwd`
+    1. `mkpasswd -cl > /etc/passwd`
     1. `mkgroup --local > /etc/group`
 1. Test if ssh works `ssh localhost`.
 
 ## Firewall setup
+Allow connection from outside.
+
+1. `Control Panel` -> `System and Security` -> `Windows Defender Firewall` -> `Advanced settings`.
+1. `Inbound Rules` ->  create `New Rule`.
+1. `Rule type: Port`, `Protocol and Ports: TCP, Specific local ports: 22`, `Action: Allow the connection`, `Profile: Domain, Private, Public`, `Name: OpenSSH SSH Server (sshd)`
+
+References
+1. https://faqbook.net/cygwin-install-ssh
