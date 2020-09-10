@@ -14,3 +14,8 @@ Download Cygwin (https://cygwin.com/index.html, setup-x86_64.exe) to workstation
 1. Choose plugins `Net > openssh, Devel > git, Editors > vim, Admin > cygrunsrv` in their newest version.
 1. Install & Finish.
 
+## Set environment variables on Windows
+
+## Setup of SSH
+1. Run Cygwin as administrator.
+1. 
