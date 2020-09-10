@@ -45,5 +45,5 @@ Allow connection from outside.
 1. `Inbound Rules` ->  create `New Rule`.
 1. `Rule type: Port`, `Protocol and Ports: TCP, Specific local ports: 22`, `Action: Allow the connection`, `Profile: Domain, Private, Public`, `Name: OpenSSH SSH Server (sshd)`
 
-References
+## References
 1. https://faqbook.net/cygwin-install-ssh
