@@ -11,7 +11,7 @@ Download Cygwin (https://cygwin.com/index.html, setup-x86_64.exe) to workstation
 1. Local Package Directory `C:\cygwin64`.
 1. Select Your Internet Connections `Use System Proxy Settings`.
 1. Choose A Download Site `http://ftp.ntu.edu.tw`.
-1. There will be some default plugins, choose additional plugins `Net > openssh, Devel > git, Editors > vim, Admin > cygrunsrv , Net > rsync` in their newest version.
+1. There will be some default plugins, choose additional plugins `Net > openssh, Devel > git, Editors > vim, Admin > cygrunsrv, Net > rsync` in their newest version.
 1. Install & Finish.
 
 ** If you want to install other functions/packages in the future, run `setup-x86_64.exe` again and choose the ones you need.
