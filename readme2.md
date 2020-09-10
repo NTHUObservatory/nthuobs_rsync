@@ -47,3 +47,5 @@ Allow connection from outside.
 
 ## References
 1. https://faqbook.net/cygwin-install-ssh
+
+Revised on 2020/09/10.
