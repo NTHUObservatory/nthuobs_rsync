@@ -16,19 +16,19 @@ Download Cygwin (https://cygwin.com/index.html, setup-x86_64.exe) to workstation
 
 ** If you want to install other functions/packages in the future, run `setup-x86_64.exe` again and choose the ones you need.
 
-## Setup environment variables on Windows
-### Set user password
+### Setup environment variables on Windows
+#### Set user password
 1. Right click on "This PC" -> `Manage`.
 1. `System Tools` -> `Local Users and Groups` -> `Users`.
 1. Right click on your user, here `observatory` -> `Set Password` -> `Proceed` -> type new password.
 
-### Environment variable
+#### Environment variable
 1. Right click on "This PC" -> `Properties` -> `Advanced System Settings`.
 1. `Advanced` tab -> `Environment Variables`.
 1. `System variables` -> `New` -> Variable name: CYGWIN, Variable value: ntsec tty.
 1. In `System variables`, find `PATH` -> `Edit` -> `New` -> `C:\cygwin64\bin\`.
 
-## Setup of SSH
+### Setup of SSH
 1. Run Cygwin as administrator.
 1. Type `ssh-host-config`, it will create some files automatically.
 1. It will ask `Should StrictModes be used? (yes/no)` -> `yes`.
@@ -38,14 +38,17 @@ Download Cygwin (https://cygwin.com/index.html, setup-x86_64.exe) to workstation
     1. `mkgroup --local > /etc/group`
 1. Test if ssh works `ssh localhost`.
 
-## Firewall setup
+### Firewall setup
 Allow connection from outside.
 
 1. `Control Panel` -> `System and Security` -> `Windows Defender Firewall` -> `Advanced settings`.
 1. `Inbound Rules` ->  create `New Rule`.
 1. `Rule type: Port`, `Protocol and Ports: TCP, Specific local ports: 22`, `Action: Allow the connection`, `Profile: Domain, Private, Public`, `Name: OpenSSH SSH Server (sshd)`
 
+## Rsync
+
+
 ## References
 1. https://faqbook.net/cygwin-install-ssh
 
-Revised on 2020/09/10.
+Revised on 2020/09/15.
