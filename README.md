@@ -14,7 +14,7 @@ Download Cygwin (https://cygwin.com/index.html, setup-x86_64.exe) to workstation
 1. There will be some default plugins, choose additional plugins `Net > openssh, Devel > git, Editors > vim, Admin > cygrunsrv, Net > rsync` in their newest version.
 1. Install & Finish.
 
-** If you want to install other functions/packages in the future, run `setup-x86_64.exe` again and choose the ones you need.
+`Note:` If you want to install other functions/packages in the future, run `setup-x86_64.exe` again and choose the ones you need.
 
 ### Setup environment variables on Windows
 #### Set user password
@@ -48,7 +48,7 @@ Allow connection from outside.
 1. `Rule type: Port`, `Protocol and Ports: TCP, Specific local ports: 22`, `Action: Allow the connection`, `Profile: Domain, Private, Public`, `Name: OpenSSH SSH Server (sshd)`
 
 ## Rsync
-Note: Rsync requires installation on both machines. If rsync is not installed on your backup destination (perhaps a Linux machine), please install it.
+`Note:` Rsync requires installation on both machines. If rsync is not installed on your backup destination (perhaps a Linux machine), please install it.
 
 Rsync is a useful tool in doing remote backup. There are different types of backup that can be choose using rsync while scp can only do full backup.  
 * Full backup copies the full data set to the destination which consumes time and storage space.  
@@ -77,7 +77,7 @@ To do automatic backups, we don't want to type password every time so we use ssh
 sshpass -p [password] rsync -avP observatory@140.114.80.236:/[directory]/ /data/nthuobs/[directory]/
 ```
 Put the command lines in a .sh file, set the path of .sh file to cron and it will do automatic backup every certain time.  
-Note: Give Andrew this .sh file and he will help with the cron part.
+`Note:` Give Andrew this .sh file and he will help with the cron part.
 
 ## References
 1. https://faqbook.net/cygwin-install-ssh
