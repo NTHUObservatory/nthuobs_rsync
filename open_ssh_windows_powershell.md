@@ -1,5 +1,7 @@
 # nthuobs_rsync
-This file explains how to synchronize observation data on the workstation (Win 10) in NTHU Observatory to CICA cluster (Linux) in NTHU IoA by rsync.
+This file explains how to open ssh port in Windows.   
+  
+**Not used in this project**
 
 ## Install OpenSSH server and client on Windows 10 1809
 We use Windows PowerShell as our shell so we can run Linux commands. 
