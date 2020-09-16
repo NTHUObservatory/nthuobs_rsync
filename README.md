@@ -46,9 +46,35 @@ Allow connection from outside.
 1. `Rule type: Port`, `Protocol and Ports: TCP, Specific local ports: 22`, `Action: Allow the connection`, `Profile: Domain, Private, Public`, `Name: OpenSSH SSH Server (sshd)`
 
 ## Rsync
+Note: Rsync requires installation on both machines. If rsync is not installed on your backup destination (perhaps a Linux machine), please install it.
+
+Rsync is a useful tool in doing remote backup. There are different types of backup that can be choose using rsync while scp can only do full backup.  
+* Full backup copies the full data set to the destination which consumes time and storage space.  
+* Incremental backup only back up the files that are changed since the last backup.   
+* Differential backup is similar to incremental backup while it compares with the last full backup rather than any type of backup.  
+
+This is how rsync works:
+```
+rsync -[option] source destination
+```
+If it requires login to other machines, it will ask you for password after this command.
+We want to backup files from workstation (Windows) to CICA (Linux).
+For safety issues, we give commands on CICA:
+```
+rsync -avP observatory@140.114.80.236:/[directory]/ /data/nthuobs/[directory]/
+
+-a, –archive        archive files and directory while synchronizing ( -a equal to following options -rlptgoD)
+-v, –verbose        Verbose output
+-P, –progress       show the sync progress during transfer
+```
+
+## Cron
+The cron service can schedule tasks on a repetitive basis. We can put our .sh files in cron job to run daily backups.
 
 
 ## References
 1. https://faqbook.net/cygwin-install-ssh
+1. https://searchdatabackup.techtarget.com/tip/Data-backup-types-explained-Full-incremental-differential-and-incremental-forever-backup
+1. https://www.linuxtechi.com/rsync-command-examples-linux/
 
 Revised on 2020/09/15.
