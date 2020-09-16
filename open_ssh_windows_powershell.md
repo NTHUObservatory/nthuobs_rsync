@@ -62,5 +62,3 @@ https://docs.microsoft.com/zh-tw/windows-server/administration/openssh/openssh_s
 ```
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -PropertyType String -Force
 ```
-
-## Create a PowerShell host for SSH remoting
