@@ -30,12 +30,14 @@ Download Cygwin (https://cygwin.com/index.html, setup-x86_64.exe) to workstation
 
 ### Setup of SSH
 1. Run Cygwin as administrator.
-1. Type `ssh-host-config`, it will create some files automatically.
+1. Type `ssh-host-config`, it will generate some files automatically.
 1. It will ask `Should StrictModes be used? (yes/no)` -> `yes`.
 1. Activate ssh `net start sshd`.
 1. Syncronize users and password of Cygwin and Windows.
-    1. `mkpasswd -cl > /etc/passwd`
-    1. `mkgroup --local > /etc/group`
+    ```
+    mkpasswd -cl > /etc/passwd
+    mkgroup --local > /etc/group
+    ```
 1. Test if ssh works `ssh localhost`.
 
 ### Firewall setup
@@ -70,11 +72,16 @@ rsync -avP observatory@140.114.80.236:/[directory]/ /data/nthuobs/[directory]/
 
 ## Cron
 The cron service can schedule tasks on a repetitive basis. We can put our .sh files in cron job to run daily backups.
-
+To do automatic backups, we don't want to type password every time so we use sshpass.
+```
+sshpass -p [password] rsync -avP observatory@140.114.80.236:/[directory]/ /data/nthuobs/[directory]/
+```
+Put the command lines in a .sh file, set the path of .sh file to cron and it will do automatic backup every certain time.  
+Note: Give Andrew this .sh file and he will help with the cron part.
 
 ## References
 1. https://faqbook.net/cygwin-install-ssh
 1. https://searchdatabackup.techtarget.com/tip/Data-backup-types-explained-Full-incremental-differential-and-incremental-forever-backup
 1. https://www.linuxtechi.com/rsync-command-examples-linux/
 
-Revised on 2020/09/15.
+Revised on 2020/09/16.
