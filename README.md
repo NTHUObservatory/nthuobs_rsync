@@ -97,4 +97,5 @@ Put the command lines in a .sh file, set the path of .sh file to cron and it wil
 1. https://searchdatabackup.techtarget.com/tip/Data-backup-types-explained-Full-incremental-differential-and-incremental-forever-backup
 1. https://www.linuxtechi.com/rsync-command-examples-linux/
 
-Revised on 2021/03/29.
+Created on 2020/08/16.
+Last revised on 2021/03/29.
