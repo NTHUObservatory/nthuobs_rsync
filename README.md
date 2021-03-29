@@ -73,10 +73,11 @@ This is how rsync works:
 rsync -[option] source destination
 ```
 If it requires login to other machines, it will ask you for password after this command.
-We want to backup files from workstation (Windows) to CICA (Linux).
+We want to backup files from workstation, monitor (Windows) to CICA (Linux).
 For safety issues, we give commands on CICA:
 ```
-rsync -avP observatory@140.114.80.236:/[directory]/ /data/nthuobs/[directory]/
+rsync -avP observatory@140.114.80.230:/[directory]/ /data/nthuobs/[directory]/
+rsync -avP nthuobs@140.114.80.235:/[directory]/ /data/nthuobs/[directory]/
 
 -a, –archive        archive files and directory while synchronizing ( -a equal to following options -rlptgoD)
 -v, –verbose        Verbose output
@@ -87,7 +88,8 @@ rsync -avP observatory@140.114.80.236:/[directory]/ /data/nthuobs/[directory]/
 The cron service can schedule tasks on a repetitive basis. We can put our .sh files in cron job to run daily backups.
 To do automatic backups, we don't want to type password every time so we use sshpass.
 ```
-sshpass -p [password] rsync -avP observatory@140.114.80.236:/[directory]/ /data/nthuobs/[directory]/
+sshpass -p [password] rsync -avP observatory@140.114.80.230:/[directory]/ /data/nthuobs/[directory]/
+sshpass -p [password] rsync -avP nthuobs@140.114.80.235:/[directory]/ /data/nthuobs/[directory]/
 ```
 Put the command lines in a .sh file, set the path of .sh file to cron and it will do automatic backup every certain time.  
 `Note:` Give Andrew this .sh file and he will help with the cron part.
