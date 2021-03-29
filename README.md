@@ -40,6 +40,18 @@ Download Cygwin (https://cygwin.com/index.html, setup-x86_64.exe) to workstation
     ```
 1. Test if ssh works `ssh localhost`.
 
+#### SSH server on Windows
+(https://virtualizationreview.com/articles/2020/05/21/ssh-server-on-windows-10.aspx)
+If `net start sshd` doesn't work, it means you haven't install ssh server on windows.
+1. Go to `Windows Settings`, `Apps`, `Optional features`, click `Add a feature`, select `OpenSSH Server`, and click `Install`.
+2. Launch Powershell as Administrator.
+3. See the status of the service: `Get-Service sshd`.
+4. Start the service: `Start-Service sshd`.
+5. Verify that the service was running: `Get-Service sshd` and make sure the status is 'Running'.
+6. Let SSH service to start every time the system booted up: `Set-Service -Name sshd -StartupType 'Automatic'`.
+7. To check and make sure that the port for the SSH server was open: `Get-NetFirewallRule -Name *ssh*`.
+8. Test if ssh works `ssh localhost`.
+
 ### Firewall setup
 Allow connection from outside.
 
