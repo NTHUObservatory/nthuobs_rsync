@@ -1,6 +1,6 @@
 # nthuobs_rsync
 
-This file explains how to synchronize observation data on the workstation (Win 10) in NTHU Observatory to CICA cluster (Linux) in NTHU IoA by rsync.
+This file explains how to synchronize observation data on the workstation & monitor (Win 10) in NTHU Observatory to CICA cluster (Linux) in NTHU IoA by rsync.
 
 ## Installation of Cygwin on Windows
 Download Cygwin (https://cygwin.com/index.html, setup-x86_64.exe) to workstation.
@@ -18,6 +18,7 @@ Download Cygwin (https://cygwin.com/index.html, setup-x86_64.exe) to workstation
 
 ### Setup environment variables on Windows
 #### Set user password
+`Note:` If you have set user password already, skip this step.
 1. Right click on "This PC" -> `Manage`.
 1. `System Tools` -> `Local Users and Groups` -> `Users`.
 1. Right click on your user, here `observatory` -> `Set Password` -> `Proceed` -> type new password.
@@ -30,7 +31,7 @@ Download Cygwin (https://cygwin.com/index.html, setup-x86_64.exe) to workstation
 
 ### Setup of SSH
 1. Run Cygwin as administrator.
-1. Type `ssh-host-config`, it will generate some files automatically.
+1. Type `ssh-host-config`, it will generate some key files automatically.
 1. It will ask `Should StrictModes be used? (yes/no)` -> `yes`.
 1. Activate ssh `net start sshd`.
 1. Syncronize users and password of Cygwin and Windows.
@@ -96,4 +97,4 @@ Put the command lines in a .sh file, set the path of .sh file to cron and it wil
 1. https://searchdatabackup.techtarget.com/tip/Data-backup-types-explained-Full-incremental-differential-and-incremental-forever-backup
 1. https://www.linuxtechi.com/rsync-command-examples-linux/
 
-Revised on 2020/09/16.
+Revised on 2021/03/29.
