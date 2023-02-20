@@ -33,7 +33,7 @@ Download Cygwin (https://cygwin.com/index.html, setup-x86_64.exe) to workstation
 1. Run Cygwin as administrator.
 1. Type `ssh-host-config`, it will generate some key files automatically.
 1. It will ask `Should StrictModes be used? (yes/no)` -> `yes`.
-1. Activate ssh `net start sshd`.
+1. Activate ssh `net start cygsshd`.
 1. Syncronize users and password of Cygwin and Windows.
     ```
     mkpasswd -cl > /etc/passwd
